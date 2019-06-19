@@ -23,7 +23,7 @@ def generator(slovar, num, end, step, magic_number, count_words):
     while 1:
         n += step
         if n >= end:
-            n = 0
+            n = n - end
 
         if len(slovar[n]) < 4:
             continue

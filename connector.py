@@ -13,12 +13,22 @@ class CONNECTOR(INTERFACE):
         self.proxies = proxies
 
     def get_profile(self):
-        self.vk_api = self.vk_api.get_profile()
-        self.twitter_api = self.twitter_api.get_profile()
+        vk_profile = self.vk_api.get_profile()
+        tw_profile = self.twitter_api.get_profile()
+
+        return self.merge(vk_profile, tw_profile)
 
     def get_friends(self):
-        pass
+        vk_friends = self.vk_api.get_friends()
+        tw_friends = self.twitter_api.get_friends()
+
+        return self.merge(vk_friends, tw_friends)
 
     def get_wall(self):
-        pass
+        vk_wall = self.vk_api.get_wall()
+        tw_wall = self.twitter_api.get_wall()
 
+        return self.merge(vk_wall, tw_wall)
+
+    def merge(self, obj1, obj2):
+        return
